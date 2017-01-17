@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Carte" table="carte">
+    <id name="id" type="integer" column="id">
+      <generator strategy="SEQUENCE"/>
+      <sequence-generator sequence-name="carte_id_seq" allocation-size="1" initial-value="1"/>
+    </id>
+    <field name="nome" type="text" column="nome" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="esp" type="text" column="esp" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="rarity" type="text" column="rarity" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default">c</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

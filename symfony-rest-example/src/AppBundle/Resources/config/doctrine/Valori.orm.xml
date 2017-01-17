@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Valori" table="valori">
+    <indexes>
+      <index name="IDX_D3F717ACEBF8FCEE" columns="cardid"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="SEQUENCE"/>
+      <sequence-generator sequence-name="valori_id_seq" allocation-size="1" initial-value="1"/>
+    </id>
+    <field name="regsellprice" type="float" column="regsellprice" precision="10" scale="0" nullable="true"/>
+    <field name="foilsellprice" type="float" column="foilsellprice" precision="10" scale="0" nullable="true"/>
+    <field name="regbuyprice" type="float" column="regbuyprice" precision="10" scale="0" nullable="true"/>
+    <field name="foilbuyprice" type="float" column="foilbuyprice" precision="10" scale="0" nullable="true"/>
+    <field name="maxregbuyqt" type="integer" column="maxregbuyqt" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="maxfoilbuyqt" type="integer" column="maxfoilbuyqt" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="insert" type="datetimetz" column="insert" nullable="true"/>
+    <field name="lastupdate" type="datetimetz" column="lastupdate" nullable="true"/>
+    <many-to-one field="cardid" target-entity="Carte" fetch="LAZY">
+      <join-columns>
+        <join-column name="cardid" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
