@@ -1,5 +1,11 @@
 <?php 
 
+/* 
+ * DISCLAIMER: I have put together code from multiple classes. The live version has the database processes handled by a specific Model.
+ * The controller should only check the user data and pass it to a Library for the logic and from there call a model.
+ * I'll create a snippet of the Model and Library as soon as possible to show how to clean this code up (Handling database queries in the controller... hideous...)
+ */
+
 namespace Lib\Controllers;
 
 class Auth {
